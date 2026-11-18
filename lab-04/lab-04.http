@@ -1,0 +1,55 @@
+6### 1. Register a new user (201)
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "sudharshan_reddy",
+  "name": "Vemuri Jaswanth",
+  "password": "pass123"
+}
+
+### 2. Register the same username again (400)
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "sudharshan_reddy",
+  "name": "Vemuri Jaswanth",
+  "password": "pass123"
+}
+
+### 3. Login with correct credentials (200)
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "sudharshan_reddy",
+  "password": "pass123"
+}
+
+### 4. Login with an unknown username (400)
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "unknownuser",
+  "password": "pass123"
+}
+
+### 5. Login with a wrong password (400)
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "sudharshan_reddy",
+  "password": "wrong123"
+}
+
+### 6. Register with missing data (400)
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "name": "New User"
+}
